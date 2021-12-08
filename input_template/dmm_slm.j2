@@ -1,0 +1,328 @@
+ethernet sla
+ profile SLM0 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 0
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile SLM1 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 1
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile SLM2 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 2
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile SLM3 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 3
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile SLM4 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 4
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile SLM5 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 5
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile SLM6 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 6
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile SLM7 type cfm-synthetic-loss-measurement
+  probe
+   send packet every 100 milliseconds
+   priority 7
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets archive 6
+   !
+   measure one-way-loss-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM0 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 0
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM1 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 1
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM2 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 2
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM3 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 3
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM4 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 4
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM5 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 5
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM6 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 6
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
+ethernet sla
+ profile DMM7 type cfm-delay-measurement
+  probe
+   send burst every 10 seconds packet count 10 interval 1 seconds
+   priority 7
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets archive 6
+   !
+   measure one-way-jitter-sd
+    buckets archive 6
+   !
+   measure one-way-jitter-ds
+    buckets archive 6
+   !
+  !
+ !
+!
