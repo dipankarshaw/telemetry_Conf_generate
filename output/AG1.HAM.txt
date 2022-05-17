@@ -1,0 +1,38 @@
+telemetry model-driven
+ max-sensor-paths 4000
+ destination-group MDT_PM_RX
+  address-family ipv4 193.114.189.4 port 57001
+   encoding self-describing-gpb
+   protocol tcp
+  !
+ !
+ sensor-group MDT_SNR_CN_ENV
+  sensor-path Cisco-IOS-XR-wdsysmon-fd-oper:system-monitoring/cpu-utilization
+  sensor-path Cisco-IOS-XR-nto-misc-oper:memory-summary/nodes/node/summary
+  sensor-path Cisco-IOS-XR-telemetry-model-driven-oper:telemetry-model-driven/channel-statistics
+ !
+ sensor-group MDT_SNR_CN_INF
+ !
+ sensor-group MDT_SNR_CN_POL
+ !
+subscription MDT_SUB_CN_ENV
+  sensor-group-id MDT_SNR_CN_ENV strict-timer
+  sensor-group-id MDT_SNR_CN_ENV sample-interval 300000
+  destination-id MDT_PM_RX
+  source-interface Loopback0
+  source-qos-marking cs5
+ !
+ subscription MDT_SUB_CN_INF
+  sensor-group-id MDT_SNR_CN_INF strict-timer
+  sensor-group-id MDT_SNR_CN_INF sample-interval 300000
+  destination-id MDT_PM_RX
+  source-interface Loopback0
+  source-qos-marking cs5
+ !
+ subscription MDT_SUB_CN_POL
+  sensor-group-id MDT_SNR_CN_POL strict-timer
+  sensor-group-id MDT_SNR_CN_POL sample-interval 300000
+  destination-id MDT_PM_RX
+  source-interface Loopback0
+  source-qos-marking cs5
+ !

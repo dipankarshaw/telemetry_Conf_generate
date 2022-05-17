@@ -1,7 +1,7 @@
 telemetry model-driven
  max-sensor-paths 4000
  destination-group MDT_PM_RX
-  address-family ipv4 {{PM_IP}} port 100
+  address-family ipv4 {{PM_IP}} port {{PM_Port}}
    encoding self-describing-gpb
    protocol tcp
   !
@@ -15,13 +15,13 @@ telemetry model-driven
  !
  sensor-group MDT_SNR_CN_POL
  !
-{% if role == 'AR' -%}
+{% if role == 'L2PE-AR/SC' -%}
  sensor-group MDT_SNR_CN_SLA
   sensor-path Cisco-IOS-XR-infra-sla-oper:sla/protocols/Cisco-IOS-XR-ethernet-cfm-oper:ethernet/statistics-historicals/statistics-historical
  !
 {% else -%}
 {% endif -%}
-{% if platform == '8000' or platform == '9000' -%}
+{% if role == 'CR' or role == 'SR' -%}
  sensor-group MDT_SNR_CN_LAT
   sensor-path Cisco-IOS-XR-perf-meas-oper:performance-measurement/nodes/node/interfaces/interface-details/interface-detail
  !
@@ -48,7 +48,7 @@ telemetry model-driven
   source-interface Loopback0
   source-qos-marking cs5
  !
-{% if role == 'AR' -%}
+{% if role == 'L2PE-AR/SC' -%}
  subscription MDT_SUB_CN_SLA
   sensor-group-id MDT_SNR_CN_SLA strict-timer
   sensor-group-id MDT_SNR_CN_SLA sample-interval 300000
@@ -58,7 +58,7 @@ telemetry model-driven
  !
 {% else -%}
 {% endif -%}
-{% if platform == '8000' or platform == '9000' -%}
+{% if role == 'CR' or role == 'SR' -%}
  subscription MDT_SUB_CN_LAT
   sensor-group-id MDT_SNR_CN_LAT strict-timer
   sensor-group-id MDT_SNR_CN_LAT sample-interval 300000
