@@ -3,7 +3,7 @@ import os
 
 file_path = os.path.dirname(os.path.realpath(__file__))
 
-with open(file_path + '/input_template/node_ids.txt','r') as hostnames:
+with open(file_path + '/input/node_ids.txt','r') as hostnames:
     iq_device_list = hostnames.readlines()
 
 for device in iq_device_list:
@@ -21,6 +21,7 @@ for device in iq_device_list:
             print(output)
             net_connect.commit()
             net_connect.exit_config_mode()
+            net_connect.disconnect()
         print(f"{device} Login:> success push:>success")
     except:
         print(f"{device} Login:> Failed push:> NA")
